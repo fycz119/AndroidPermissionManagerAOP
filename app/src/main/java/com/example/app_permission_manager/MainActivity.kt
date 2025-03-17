@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.app_permission_manager.annotation.Permission
 import com.example.app_permission_manager.ui.theme.ApppermissionmanagerTheme
 
 class MainActivity : ComponentActivity() {
@@ -38,13 +39,20 @@ class MainActivity : ComponentActivity() {
 fun PermissionRequestScreen(name: String, modifier: Modifier = Modifier) {
     val context = LocalContext.current
     Column(modifier = modifier.fillMaxSize()) {
-            Button(onClick = { /* TODO: Handle button 1 click */ }) {
+            Button(onClick = {
+                getPermission(context)
+            }) {
                 Text(text = "Button 1")
             }
             Button(onClick = { /* TODO: Handle button 2 click */ }) {
                 Text(text = "Button 2")
             }
         }
+}
+
+@Permission(value = ["android.permission.CAMERA"], requestCode = 100)
+fun getPermission(context: Context) {
+    TODO("Not yet implemented")
 }
 
 @Preview(showBackground = true)
