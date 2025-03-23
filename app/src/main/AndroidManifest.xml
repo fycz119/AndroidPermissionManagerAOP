@@ -23,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.app_permission_manager.transparent.ApplyPermissionActivity" android:theme="@style/my_Transparent">
+        </activity>
     </application>
 
 </manifest>

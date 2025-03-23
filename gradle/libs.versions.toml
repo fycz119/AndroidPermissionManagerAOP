@@ -13,6 +13,7 @@ composeBom = "2024.09.00"
 
 [libraries]
 android-aop-core = { module = "io.github.FlyJingFish.AndroidAop:android-aop-core", version.ref = "androidAopCore" }
+android-aop-ksp = { module = "io.github.FlyJingFish.AndroidAop:android-aop-ksp", version.ref = "androidAopCore" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "app-permission-manager"
+rootProject.name = "app_permission_manager"
 include(":app")
  

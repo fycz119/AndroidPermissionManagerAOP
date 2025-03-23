@@ -5,6 +5,7 @@ import com.example.app_permission_manager.interfaces.PermissionRequestCallback
 
 
 object CommenDefines {
+    const val TAG = "PermissionManager"
     const val REQUEST_PERMISSIONS: String = "request_permissions"
 
     //请求码

@@ -1,7 +1,9 @@
 package com.example.app_permission_manager
 
+import android.Manifest
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.app_permission_manager.annotation.Permission
+import com.example.app_permission_manager.defines.CommenDefines.TAG
 import com.example.app_permission_manager.ui.theme.ApppermissionmanagerTheme
 
 class MainActivity : ComponentActivity() {
@@ -50,9 +53,9 @@ fun PermissionRequestScreen(name: String, modifier: Modifier = Modifier) {
         }
 }
 
-@Permission(value = ["android.permission.CAMERA"], requestCode = 100)
+@Permission(value = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE), requestCode = 1)
 fun getPermission(context: Context) {
-    TODO("Not yet implemented")
+    Log.d(TAG, "getPermission: ")
 }
 
 @Preview(showBackground = true)
