@@ -53,7 +53,7 @@ fun PermissionRequestScreen(name: String, modifier: Modifier = Modifier) {
         }
 }
 
-@Permission(value = [Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE], requestCode = 1)
+@Permission(value = [Manifest.permission.READ_MEDIA_IMAGES], requestCode = 1)
 fun getPermission(context: Context) {
     Log.d(TAG, "getPermission: ")
 }
