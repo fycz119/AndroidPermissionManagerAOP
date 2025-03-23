@@ -2,8 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("android.aop")
-    id("com.google.devtools.ksp")
 }
 
 android {
@@ -40,6 +38,11 @@ android {
         compose = true
     }
 }
+val taskRequests = getGradle().startParameter.taskRequests.flatMap { it.args }
+
+if (taskRequests.isNotEmpty() && taskRequests.all { "Debug" in it }) {
+    apply(plugin = "com.ibotta.gradle.aop")
+}
 
 dependencies {
 
@@ -52,7 +55,6 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.android.aop.core)
-    ksp (libs.android.aop.ksp)
     implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -61,5 +63,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    debugImplementation(libs.aspectj.rt)
 
 }
